@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exersice 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.3/handlebars.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        #my-container{
+            width: 400px;
+            border: 1px solid grey;
+        }
+     </style>
+</head>
+    <body>
+        <div id="my-container" class="table-responsive">
+        </div>
+        <!--Handlebar templates start-->
+        <script id="user-template" type="text/x-handlebars-template">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+		<th><img src="{{avatar_url}}"></th>
+                    <th>Name</th>
+                    <th>Id</th>
+                    <th>Created Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each user}}
+                <tr>
+			<td><img src="{{avatar_url}}"></td>
+                    <td>{{ this.name }}</td>
+                    <td>{{ this.id }}</td>
+                    <td>{{ this.createdAt }}</td>
+                </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </script>
+        <!--Handlebar templates end-->
+        <script src="lib/jquery-1.10.2.min.js"></script>
+        <script src="lib/handlebars.js"></script>
+        <script src="js/my-script.js"></script>
+    </body>
+</html>
