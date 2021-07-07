@@ -13,15 +13,21 @@
         },
         loadUserData : function(){
 
-            $.ajax({
-                url:"https://5dc588200bbd050014fb8ae1.mockapi.io/assessment",
-                method:'get',
-                success:this.handlerData
+            var baseUrl = 'https://5dc588200bbd050014fb8ae1.mockapi.io/assessment';
+
+            $.ajax ({
+                url: baseUrl,
+                method: 'GET',
+                success:this.handlerData,
+                
+                error: function(){
+                    alert('error');
+                }
 
             })
         }
 };
-
+ 
 $(document).ready(function(){
 
     USER_METHOD.loadUserData();
