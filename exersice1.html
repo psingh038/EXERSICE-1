@@ -1,44 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
+ <!DOCTYPE html>
+  <head>
     <title>Exersice 1</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css" />
     <style>
-        #my-container{
-            width: 400px;
-            border: 1px solid grey;
-        }
-     </style>
-</head>
-    <body>
-        <div id="my-container">
-        </div>
-        <!--Handlebar templates start-->
-        <script id="user-template" type="text/x-handlebars-template">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Avtar<img src="{{avatar_url}}"></th>
-                    <th>Name</th>
-                    <th>Id</th>
-                    <th>Created Date</th>
-                </tr>
-                </thead>
-                <tbody>
-                {{#each user}}
-                <tr>
-                    <td><img src="{{avatar_url}}"></td>
-                    <td>{{ this.name }}</td>
-                    <td>{{ this.id }}</td>
-                    <td>{{ this.createdAt }}</td>
-                </tr>
-                {{/each}}
-                </tbody>
-            </table>
-        </script>
-        <!--Handlebar templates end-->
-        <script src="lib/jquery-1.10.2.min.js"></script>
-        <script src="lib/handlebars.js"></script>
-        <script src="js/my-script.js"></script>
-    </body>
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      span {
+        margin: 30px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="my-container"></div>
+    <!--Handlebar templates start-->
+    <script id="user-template" type="text/x-handlebars-template">
+      <!-- user name, avatar, created date, and ID -->
+      <ul class='user_list'>
+        {{#each user}}
+          <li><span>{{this.name}}</span>
+            <span><img src={{this.avatar}} /></span>
+            <span> {{this.createdAt}}</span>
+            <span> {{this.id}}</span><br /><br />
+          </li>
+        {{/each}}
+      </ul>
+    </script>
+    <!--Handlebar templates end-->
+    <script src="lib/jquery-1.10.2.min.js"></script>
+    <script src="lib/handlebars.js"></script>
+    <script src="js/my-script.js"></script>
+  </body>
 </html>
